@@ -40,11 +40,21 @@ set(CMAKE_CXX_FLAGS "-fpic -fexceptions -frtti")
 #set(CMAKE_C_COMPILER "${ANDROID_NDK}/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang")
 #set(CMAKE_CXX_COMPILER "${ANDROID_NDK}/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++")
 
+
+#设置需要链接的第三方库文件
+#头文件路径
+set(INC_HUAWEI_DIR ${CMAKE_SOURCE_DIR}/header)
+#库文件路径
+set(LINK_DIR ${CMAKE_SOURCE_DIR}/libs)
+
+include_directories(${INC_HUAWEI_DIR})
 #批量查询到.c .h .cpp文件
 #file(GLOB allCpp *.c *.h *.cpp *.hpp)
-include_directories(${CMAKE_SOURCE_DIR}/header)
-#include_directories(${CMAKE_SOURCE_DIR}/includes)
-#include_directories(${HUAWEI_SDK}/include)
+link_directories(${LINK_DIR})
+include_directories(${CMAKE_SOURCE_DIR}/includes)
+#第三方库名称,名称前不能加lib
+link_libraries(CalculatorClient)
+
 
 add_library( # Sets the name of the library.
         window_soa
@@ -78,7 +88,7 @@ message("${CMAKE_TOOLCHAIN_FILE}")
 
 target_link_libraries( # Specifies the target library.
         window_soa
-        #soa_ap
+        CalculatorClient
         android
         # Links the target library to the log library
         # included in the NDK.
@@ -86,7 +96,7 @@ target_link_libraries( # Specifies the target library.
 
 target_link_libraries( # Specifies the target library.
         hac_soa
-        #soa_ap
+        CalculatorClient
         android
         # Links the target library to the log library
         # included in the NDK.

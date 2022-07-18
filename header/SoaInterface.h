@@ -5,7 +5,6 @@
 #ifndef JNIDEMO_SOAINTERFACE_H
 #define JNIDEMO_SOAINTERFACE_H
 
-
 /**
  * 空调相关的接口声明
  */
