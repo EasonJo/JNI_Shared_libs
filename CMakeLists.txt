@@ -40,20 +40,20 @@ set(CMAKE_CXX_FLAGS "-fpic -fexceptions -frtti")
 #set(CMAKE_C_COMPILER "${ANDROID_NDK}/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang")
 #set(CMAKE_CXX_COMPILER "${ANDROID_NDK}/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++")
 
-
 #设置需要链接的第三方库文件
 #头文件路径
-set(INC_HUAWEI_DIR ${CMAKE_SOURCE_DIR}/header)
+set(INC_HUAWEI_DIR ${CMAKE_SOURCE_DIR}/includes)
 #库文件路径
 set(LINK_DIR ${CMAKE_SOURCE_DIR}/libs)
 
+include_directories(${CMAKE_SOURCE_DIR}/header)
 include_directories(${INC_HUAWEI_DIR})
 #批量查询到.c .h .cpp文件
 #file(GLOB allCpp *.c *.h *.cpp *.hpp)
 link_directories(${LINK_DIR})
-include_directories(${CMAKE_SOURCE_DIR}/includes)
 #第三方库名称,名称前不能加lib
 link_libraries(CalculatorClient)
+message("HUWEI SDK: ${INC_HUAWEI_DIR}")
 
 
 add_library( # Sets the name of the library.

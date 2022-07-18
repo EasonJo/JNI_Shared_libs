@@ -1,12 +1,11 @@
-/*
- * Copyright (c) Huawei Technologies Co., Ltd. 2012-2021. All rights reserved.
+/* * Copyright (c) Huawei Technologies Co., Ltd. 2012-2021. All rights reserved.
  * Description: AP组件示例程序服务端头文件
  * Create: 2021-9-8
- *//*
+ * */
 
 #ifndef HUAWEI_AP_CONTROL_CONTROL_ACTIVITY_H_
 #define HUAWEI_AP_CONTROL_CONTROL_ACTIVITY_H_
-
+/*
 #include <memory>
 #include <mutex>
 #include <iostream>
@@ -49,6 +48,5 @@ namespace CalculatorClient {
         ara::com::FindServiceHandle CalculatorServiceHandle_;
 
     };
-}
+}*/
 #endif
-*/
