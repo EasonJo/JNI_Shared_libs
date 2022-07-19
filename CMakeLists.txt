@@ -21,7 +21,7 @@ set(ANDROID_ABI arm64-v8a)
 set(CMAKE_TOOLCHAIN_FILE $ENV{ANDROID_NDK_HOME}/build/cmake/android.toolchain.cmake)
 message(CMAKE_TOOLCHAIN_FILE: ${CMAKE_TOOLCHAIN_FILE})
 project(JNI_Shared_libs)
-
+message(ANDROID_ABI: ${ANDROID_ABI})
 set(CMAKE_CXX_STANDARD 14)
 #定义Android NDK的路径,设置了NDK的系统环境变量之后,无需再设置此路径
 #set(ANDROID_NDK "D:/Android/android-sdk/ndk/25.0.8775105")
@@ -56,7 +56,6 @@ set(HUAWEI_SDK_L $ENV{HUAWEI_SDK})
 include_directories(${HUAWEI_SDK_L}/include)
 include_directories(${CMAKE_SOURCE_DIR}/header)
 include_directories(${INC_HUAWEI_DIR})
-
 #批量查询到.c .h .cpp文件
 #file(GLOB allCpp *.c *.h *.cpp *.hpp)
 link_directories(${LINK_DIR})
