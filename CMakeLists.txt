@@ -21,15 +21,14 @@ set(CMAKE_TOOLCHAIN_FILE $ENV{ANDROID_NDK_HOME}/build/cmake/android.toolchain.cm
 message(CMAKE_TOOLCHAIN_FILE: ${CMAKE_TOOLCHAIN_FILE})
 project(JNI_Shared_libs)
 
-message(ANDROID_ABI: ${ANDROID_ABI})
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 #定义Android NDK的路径,设置了NDK的系统环境变量之后,无需再设置此路径
 #set(ANDROID_NDK "D:/Android/android-sdk/ndk/25.0.8775105")
 #设置NDK编译链工具文件路径,此文件内部会生成基于CMAKE的NDK编译需要的所有编译参数
 #set(CMAKE_ANDROID_NDK ${ANDROID_NDK}) # 设置了环境变量之后,就无须设置此变量,.cmake文件内部已经处理
-#set(CMAKE_SYSTEM_NAME Android) # .cmake文件内部指定
-#set(CMAKE_SYSTEM_VERSION 29) # .cmake文件内部指定
-#set(CMAKE_ANDROID_ARCH_ABI armeabi-v7a) # .cmake文件内部指定
+#set(CMAKE_SYSTEM_NAME Android) #.cmake文件内部指定
+#set(CMAKE_SYSTEM_VERSION 29) #.cmake文件内部指定
+#set(CMAKE_ANDROID_ARCH_ABI armeabi-v7a) #.cmake文件内部指定
 
 #无需再设置以下属性,android.toolchain.cmake文件中会根据ANDROID_ABI自动为以下属性赋值
 #set(CMAKE_ANDROID_ARCH_ABI arm64-v8a)
@@ -56,8 +55,7 @@ include_directories(${INC_HUAWEI_DIR})
 link_directories(${LINK_DIR})
 #第三方库名称,名称前不能加lib
 link_libraries(CalculatorClient)
-message("HUAWEI SDK: ${HUAWEI_SDK_L}")
-
+message("HUAWEI SDK: ${INC_HUAWEI_DIR}")
 
 add_library( # Sets the name of the library.
         window_soa
@@ -76,6 +74,10 @@ set_target_properties(
         soa_ap
         PROPERTIES IMPORTED_LOCATION
         ${CMAKE_SOURCE_DIR}/libs/libCalculatorClient.so)]]
+
+message(Android NDK: $ENV{ANDROID_NDK_HOME})
+message(ANDROID_ABI: ${ANDROID_ABI})
+message(${CMAKE_TOOLCHAIN_FILE})
 
 #使用Android Studio时使用
 #find_library( # Sets the name of the path variable.
