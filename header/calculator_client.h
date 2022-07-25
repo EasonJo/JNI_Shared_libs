@@ -5,7 +5,7 @@
 
 #ifndef HUAWEI_AP_CONTROL_CONTROL_ACTIVITY_H_
 #define HUAWEI_AP_CONTROL_CONTROL_ACTIVITY_H_
-/*
+
 #include <memory>
 #include <mutex>
 #include <iostream>
@@ -25,9 +25,8 @@ namespace CalculatorClient {
 
         void Act();
 
-
     private:
-        void ServiceAvailabilityCallback(ara::com::ServiceHandleContainer <CalculatorProxy::HandleType> handles,
+        void ServiceAvailabilityCallback(ara::com::ServiceHandleContainer<CalculatorProxy::HandleType> handles,
                                          ara::com::FindServiceHandle handler);
 
         void DividedByZeroCallback();
@@ -44,9 +43,9 @@ namespace CalculatorClient {
 
         void SetDividedResult(std::uint64_t value);
 
-        std::shared_ptr <CalculatorProxy> calculatorProxy_;
+        std::shared_ptr<CalculatorProxy> calculatorProxy_;
         ara::com::FindServiceHandle CalculatorServiceHandle_;
 
     };
-}*/
+}
 #endif

@@ -37,15 +37,14 @@ SoaHacImpl::SoaHacImpl() {
 }
 
 void SoaHacImpl::doTest() {
-    /*CalculatorClient::ClientAct clientAct;
+    CalculatorClient::ClientAct clientAct;
     std::thread t([&]() {
-//        auto a = const_cast<CalculatorClient::ClientAct *>(&clientAct);
         clientAct.Init();
-        std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+        std::this_thread::sleep_for(std::chrono::seconds(200));
         clientAct.Act();
-        std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+        std::this_thread::sleep_for(std::chrono::seconds (200));
         clientAct.Stop();
     });
-    t.detach();*/
+    t.detach();
 }
 
