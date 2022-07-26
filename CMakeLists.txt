@@ -68,11 +68,11 @@ add_library( # Sets the name of the library.
         # Sets the library as a shared library.
         SHARED
         # Provides a relative path to your source file(s).
-        window-lib.cpp
-        SoaWindowsImpl.cpp
+        src/window-lib.cpp
+        src/SoaWindowsImpl.cpp
         )
 
-add_library(hac_soa SHARED hac-lib.cpp SoaHacImpl.cpp)
+add_library(hac_soa SHARED src/hac-lib.cpp src/SoaHacImpl.cpp)
 
 ## 添加第三方库
 #[[add_library(soa_ap
