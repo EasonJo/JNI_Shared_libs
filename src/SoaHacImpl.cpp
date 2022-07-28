@@ -34,16 +34,17 @@ SoaHacImpl::SoaHacImpl() {
     //todo 初始化
     int i = 0;
     //soaApClient = new SoaApClient()
+    clientAct = std::make_shared<CalculatorClient::ClientAct>();
 }
 
 void SoaHacImpl::doTest() {
-    CalculatorClient::ClientAct clientAct;
+    //CalculatorClient::ClientAct clientAct;
     std::thread t([&]() {
-        clientAct.Init();
+        clientAct->Init();
         std::this_thread::sleep_for(std::chrono::seconds(200));
-        clientAct.Act();
-        std::this_thread::sleep_for(std::chrono::seconds (200));
-        clientAct.Stop();
+        clientAct->Act();
+        std::this_thread::sleep_for(std::chrono::seconds(200));
+        clientAct->Stop();
     });
     t.detach();
 }

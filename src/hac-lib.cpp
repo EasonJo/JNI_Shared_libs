@@ -34,7 +34,8 @@ Java_ltd_qisi_jnidemo_SoaHACManager_initService(JNIEnv *env, jobject thiz) {
     env->GetJavaVM(&javaVm); //保存全局JavaVM对象
     ::pJobject = env->NewGlobalRef(thiz);
     //初始化SoaHacImpl对象
-    ::soaHac = std::shared_ptr<SoaHACInterface>(new SoaHacImpl());
+//    ::soaHac = std::shared_ptr<SoaHACInterface>(new SoaHacImpl());
+    ::soaHac = std::make_shared<SoaHacImpl>();
     //todo 发布与订阅服务,执行初始化动作
     ::soaHac->initSoaHAC();
 }
